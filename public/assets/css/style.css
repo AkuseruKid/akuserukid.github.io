@@ -1,0 +1,367 @@
+/* ---------------- General Settings ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    background-color: #eee;
+
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    color: #6e6e6e;
+}
+/* -------------------End General Settings --------------- */
+
+/* ------------------- Topbar ---------------------------- */
+.topbar {
+    background-color: white;
+    padding: 20px 25px;
+    box-shadow: 0px 2px 2px rgba(116, 111, 111, 0.473);
+}
+
+.topbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.topbar-container-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar-title {
+    letter-spacing: 1px;
+    font-size: 28px;
+    color: #4c4c4c;
+}
+
+
+.topbar-menu {
+    margin-top: 15px;
+
+}
+
+.topbar-menu a{
+    display: inline-block;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #aaa;
+}
+
+
+.topbar-menu a:hover {
+    color: #333;
+}
+
+.topbar-menu a.active {
+    color: #333;
+}
+
+.topbar-line {
+    background-color: #aaa;
+    height: 1px;
+    width: 25%;
+    margin: 0 auto;
+}
+/*------------------- End Topbar ----------------*/
+
+/*------------------- Animation Burger ----------------*/
+.topbar-burger {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.no-show {
+    display: none;
+}
+/*-------------- End Animation Burger ------------*/
+
+/* ---------------- Sidebar ---------------------*/
+.container {
+    margin: 20px;
+}
+
+.sidebar {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(170, 170, 170, 0.473);
+    padding: 20px;
+}
+
+.sidebar-image img {
+    border-radius: 50%;
+    margin-bottom: 20px;
+    width: 70%;
+
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 0 30px;
+}
+
+.sidebar-description {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.sidebar-line {
+    height: 1px;
+    background-color: #aaa;
+    width: 40%;
+    margin: 25px auto;
+}
+
+.sidebar-socials {
+    text-align: center;
+}
+
+.sidebar-socials-image img {
+    height: 30px;
+    width: 30px;
+    opacity: 0.6;
+    margin: 0 6px;
+}
+
+/* ---------------- End Sidebar ---------------------*/
+/* --------------------- Card ---------------------*/
+.card, .about, .contact {
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(170, 170, 170, 0.473);
+    padding: 20px;
+}
+
+.card-image {
+    text-align: center;
+    background-image: url("https://picsum.photos/600/200");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#card-image2 {
+    background-image: url("https://picsum.photos/599/200");
+}
+
+#card-image3 {
+    background-image: url("https://picsum.photos/601/200");
+}
+
+#card-image4 {
+    background-image: url("https://picsum.photos/598/200");
+}
+
+#card-image5 {
+    background-image: url("https://picsum.photos/602/200");
+}
+
+.card-title {
+    color: #333;
+    letter-spacing: 0.5px;
+    font-size: 26px;
+}
+
+.card-date, .card-category {
+    display: inline-block;
+    color: rgb(126, 126, 126);
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin: 10px 0;
+}
+
+.card-content {
+    color: rgb(126, 126, 126);
+    margin-bottom: 10px;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+/* --------------------- End Card ---------------------*/
+
+.about-title, .about-subtitle, .contact-title {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.about-content, .contact-content {
+    color: #333;
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+.about-contact, .contact-form button {
+    background-color: #ff9100;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-top: 15px;
+}
+
+.form-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 7px 0;
+}
+
+.contact-form input, .contact-form textarea {
+    border: 1px solid #6e6e6e;
+    border-radius: 4px;
+    padding: 10px;
+}
+/* --------------------- Media Queries ---------------------*/
+@media only screen and (min-width: 500px){
+    .topbar-burger {
+        display: none;
+    }
+
+    .no-show {
+        display: block;
+    }
+
+    .topbar-container-mobile {
+        display: block;
+    }
+
+    .topbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .topbar-menu  {
+        margin: 0;
+    }
+
+    .topbar-menu a {
+        margin: 0 15px;
+    }
+
+    .topbar-line {
+        display: none;
+    }
+
+
+}
+
+@media only screen and (min-width: 600px){
+    .sidebar-header {
+        margin: 0 60px;
+    }
+}
+
+@media only screen and (min-width: 800px){
+    .topbar-title {
+        margin-left: 15px;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 30px auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sidebar {
+        width: 220px;
+        flex: none;
+        height: 370px;
+        margin-left: 30px;
+    }
+
+    .sidebar-header {
+        margin: 0;
+    }
+
+    .sidebar-image img {
+        width: 100%;
+    }
+
+    .sidebar-socials-image img:hover {
+        opacity: 1;
+        transition: 0.4s;
+    }
+
+    .main {
+        margin-left: 25px;
+        width: auto;
+        margin-right: 30px;
+    }
+
+    .card {
+        margin: 0;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-image {
+        background-image: url("https://picsum.photos/600/200");
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 150px;
+        margin: 0;
+        margin-right: 25px;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .sidebar {
+        width: 300px;
+        height: 430px;
+    }
+
+    .container {
+        max-width: 1250px;
+    }
+
+    .card-image {
+        width: 250px;
+    }
+}
+
+/* --------------------- End Media Queries ---------------------*/

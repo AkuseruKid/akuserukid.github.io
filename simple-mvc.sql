@@ -1,63 +1,42 @@
--- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
---
--- Client :  localhost
--- Généré le :  Jeu 26 Octobre 2017 à 13:53
--- Version du serveur :  5.7.19-0ubuntu0.16.04.1
--- Version de PHP :  7.0.22-0ubuntu0.16.04.1
+DROP DATABASE IF EXISTS blog_mvc;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+CREATE DATABASE blog_mvc;
 
+USE blog_mvc;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+CREATE TABLE categories
+(
+id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(255) NOT NULL
+);
 
---
--- Base de données :  `simple-mvc`
---
+CREATE TABLE articles
+(
+id INT PRIMARY KEY AUTO_INCREMENT,
+categories_id INT NOT NULL,
+title VARCHAR(255) NOT NULL,
+content TEXT NOT NULL,
+author VARCHAR(255) NOT NULL,
+FOREIGN KEY (categories_id) REFERENCES  categories(id)
+);
 
--- --------------------------------------------------------
+CREATE TABLE comments
+(
+id INT PRIMARY KEY AUTO_INCREMENT,
+articles_id INT,
+author VARCHAR(255) NOT NULL,
+content TEXT NOT NULL,
+FOREIGN KEY (articles_id) REFERENCES articles(id)
+);
 
---
--- Structure de la table `item`
---
+INSERT INTO categories (name) VALUES ('Gastronomie');
+INSERT INTO categories (name) VALUES ('Art');
+INSERT INTO categories (name) VALUES ('Voyage');
 
-CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO articles (categories_id, title, content, author) VALUES (1, 'Les sushis Japonais',  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique mauris nibh, nec pulvinar lacus posuere et. Donec vulputate nunc sagittis purus consequat, sit amet iaculis mauris aliquet. Curabitur vitae tincidunt lectus, ac dignissim enim. Duis faucibus tellus efficitur consequat ultricies. Fusce vulputate mauris risus, sit amet sollicitudin lacus efficitur non. Morbi imperdiet felis eu eleifend scelerisque. Nunc sit amet aliquet nunc, vel semper ante. Donec vehicula a urna at posuere. Vivamus ex nisl, pretium id gravida id, consequat non nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper id massa sit amet tincidunt. Nam ut viverra sem. Sed sagittis iaculis diam. Mauris et ex sed sapien bibendum vehicula. Sed aliquam venenatis magna tempor iaculis. Proin consequat, mi nec dictum volutpat, neque velit dapibus neque, ut commodo dolor nisl ut nunc. Vivamus non lacinia nibh. Aliquam id nunc elit', 'Axel');
+INSERT INTO articles (categories_id, title, content, author) VALUES (2, 'Le musée Guggenheim',  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique mauris nibh, nec pulvinar lacus posuere et. Donec vulputate nunc sagittis purus consequat, sit amet iaculis mauris aliquet. Curabitur vitae tincidunt lectus, ac dignissim enim. Duis faucibus tellus efficitur consequat ultricies. Fusce vulputate mauris risus, sit amet sollicitudin lacus efficitur non. Morbi imperdiet felis eu eleifend scelerisque. Nunc sit amet aliquet nunc, vel semper ante. Donec vehicula a urna at posuere. Vivamus ex nisl, pretium id gravida id, consequat non nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper id massa sit amet tincidunt. Nam ut viverra sem. Sed sagittis iaculis diam. Mauris et ex sed sapien bibendum vehicula. Sed aliquam venenatis magna tempor iaculis. Proin consequat, mi nec dictum volutpat, neque velit dapibus neque, ut commodo dolor nisl ut nunc. Vivamus non lacinia nibh. Aliquam id nunc elit', 'Axel');
+INSERT INTO articles (categories_id, title, content, author) VALUES (1, 'Mon escapade au Pérou',  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique mauris nibh, nec pulvinar lacus posuere et. Donec vulputate nunc sagittis purus consequat, sit amet iaculis mauris aliquet. Curabitur vitae tincidunt lectus, ac dignissim enim. Duis faucibus tellus efficitur consequat ultricies. Fusce vulputate mauris risus, sit amet sollicitudin lacus efficitur non. Morbi imperdiet felis eu eleifend scelerisque. Nunc sit amet aliquet nunc, vel semper ante. Donec vehicula a urna at posuere. Vivamus ex nisl, pretium id gravida id, consequat non nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper id massa sit amet tincidunt. Nam ut viverra sem. Sed sagittis iaculis diam. Mauris et ex sed sapien bibendum vehicula. Sed aliquam venenatis magna tempor iaculis. Proin consequat, mi nec dictum volutpat, neque velit dapibus neque, ut commodo dolor nisl ut nunc. Vivamus non lacinia nibh. Aliquam id nunc elit', 'Axel');
 
---
--- Contenu de la table `item`
---
+INSERT INTO comments (articles_id, author, content) VALUES (1, 'Frerot88', 'Super article !');
+INSERT INTO comments (articles_id, author, content) VALUES (2, 'John25', 'Bon article !');
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
-
---
--- Index pour les tables exportées
---
-
---
--- Index pour la table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `item`
---
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
