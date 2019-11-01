@@ -1,25 +1,25 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
+    {% include "_sidebar.html.twig" %}
+    <main class="main">
     {% for article in articles %}
-        <main class="main">
             <div class="card">
                 <div class="card-flex1">
-                    <a class="card-image-link" href="#">
+                    <a class="card-image-link" href="{{ 'article/show/' ~ article.id }}">
                         <div class="card-image" id="card-image1"></div>
                     </a>
                 </div>
                 <div class="card-flex2">
-                    <h2 class="card-title">{{ article.title }}</h2>
+                    <a href="{{ 'article/show/' ~ article.id }}" class="card-title">{{ article.title }}</a>
                     <div class="card-date">SEPTEMBER 8, 2016</div>
-                    <div class="card-date">{{ article.author }}</div>
-                    <a href="#" class="card-category">ART</a>
-                    <p class="card-content">{{ article.content }}</p>
-                    <a class="card-link" href="#">Read more...</a>
+                    <a href="{{ 'article/show/' ~ article.id }}" class="card-category">ART</a>
+                    <p class="card-content">{{ article.precontent }}</p>
+                    <a class="card-link" href="{{ 'article/show/' ~ article.id }}">Read more...</a>
                 </div>
             </div>
-        </main>
     {% endfor %}
+    </main>
 {% endblock %}
 
 

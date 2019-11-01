@@ -178,26 +178,12 @@ a {
     border-radius: 8px;
 }
 
-#card-image2 {
-    background-image: url("https://picsum.photos/599/200");
-}
-
-#card-image3 {
-    background-image: url("https://picsum.photos/601/200");
-}
-
-#card-image4 {
-    background-image: url("https://picsum.photos/598/200");
-}
-
-#card-image5 {
-    background-image: url("https://picsum.photos/602/200");
-}
-
 .card-title {
     color: #333;
     letter-spacing: 0.5px;
-    font-size: 26px;
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
 }
 
 .card-date, .card-category {

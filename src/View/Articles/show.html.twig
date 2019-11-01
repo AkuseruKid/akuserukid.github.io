@@ -1,0 +1,22 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    {% include "_sidebar.html.twig" %}
+    <main class="main">
+            <div class="card">
+                <div class="card-flex1">
+                    <div class="card-image" id="card-image1"></div>
+                </div>
+                <div class="card-flex2">
+                    <h2 class="card-title">{{ article.title }}</h2>
+                    <div class="card-date">SEPTEMBER 8, 2016</div>
+                    <span class="card-category">ART</span>
+                    <p class="card-content">{{ article.paragraph1 }}</p>
+                    <p class="card-content">{{ article.paragraph2 }}</p>
+                    <p class="card-content">{{ article.paragraph3 }}</p>
+                    <p class="card-content">{{ article.paragraph4 }}</p>
+                    <p class="card-content">{{ article.paragraph5 }}</p>
+                </div>
+            </div>
+    </main>
+{% endblock %}

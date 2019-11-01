@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Controller\AbstractController;
 use App\Model\ArticlesManager;
 
 class ArticlesController extends AbstractController

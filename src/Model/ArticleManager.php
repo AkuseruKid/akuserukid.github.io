@@ -4,9 +4,9 @@ namespace App\Model;
 
 use App\Model\AbstractManager;
 
-class ArticlesManager extends AbstractManager
+class ArticleManager extends AbstractManager
 {
-    const TABLE = "articles";
+    const TABLE = "article";
 
     public function __construct()
     {
