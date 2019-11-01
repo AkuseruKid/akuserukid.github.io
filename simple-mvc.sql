@@ -28,8 +28,8 @@ CREATE TABLE comments
 (
 id INT PRIMARY KEY AUTO_INCREMENT,
 articles_id INT,
-author VARCHAR(255) NOT NULL,
-content TEXT NOT NULL,
+nickname VARCHAR(255) NOT NULL,
+message TEXT NOT NULL,
 FOREIGN KEY (articles_id) REFERENCES articles(id)
 );
 
@@ -59,6 +59,6 @@ INSERT INTO articles (categories_id, title, precontent, paragraph1, paragraph2, 
                                                                                                                             'Aliquam scelerisque lectus vel nunc egestas ullamcorper. Quisque viverra, odio vel scelerisque euismod, nibh mauris scelerisque nisi, vel aliquet nulla ipsum commodo nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas elementum porta sapien, a elementum quam efficitur mattis. Aenean egestas mauris at nisi pretium auctor. Nulla et tincidunt nisi, eu pulvinar ante. Praesent id scelerisque lorem. Integer blandit diam eget cursus pellentesque. Praesent in sem laoreet dui rhoncus volutpat. Donec eu eleifend magna, nec cursus arcu. Aenean pretium nunc maximus interdum bibendum. Sed faucibus molestie commodo. Maecenas finibus laoreet lectus sed elementum. Sed suscipit commodo magna, non ultricies justo efficitur at.'
                                                                                                                            );
 
-INSERT INTO comments (articles_id, author, content) VALUES (1, 'Frerot88', 'Super article !');
-INSERT INTO comments (articles_id, author, content) VALUES (2, 'John25', 'Bon article !');
+INSERT INTO comments (articles_id, nickname, message) VALUES (1, 'Frerot88', 'Super article !');
+INSERT INTO comments (articles_id, nickname, message) VALUES (2, 'John25', 'Bon article !');
 
