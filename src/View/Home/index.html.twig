@@ -6,16 +6,16 @@
         {% for article in articles %}
             <div class="card">
                 <div class="card-flex1">
-                    <a class="card-image-link" href="{{ 'articles/show/' ~ article.id }}">
+                    <a class="card-image-link" href="{{ '/articles/show/' ~ article.id }}">
                         <div class="card-image" id="card-image1"></div>
                     </a>
                 </div>
                 <div class="card-flex2">
-                    <a href="{{ 'articles/show/' ~ article.id }}" class="card-title">{{ article.title }}</a>
+                    <a href="{{ '/articles/show/' ~ article.id }}" class="card-title">{{ article.title }}</a>
                     <div class="card-date">SEPTEMBER 8, 2016</div>
-                    <a href="{{ 'articles/show/' ~ article.id }}" class="card-category">ART</a>
+                    <a href="{{ '/articles/show/' ~ article.id }}" class="card-category">ART</a>
                     <p class="card-content">{{ article.precontent }}</p>
-                    <a class="card-link" href="{{ 'articles/show/' ~ article.id }}">Read more...</a>
+                    <a class="card-link" href="{{ '/articles/show/' ~ article.id }}">Read more...</a>
                 </div>
             </div>
         {% endfor %}

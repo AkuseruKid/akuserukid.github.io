@@ -20,7 +20,6 @@ class CommentsManager extends AbstractManager
 
     public function insert(array $comment): int
     {
-        // prepared request
         $statement = $this->pdo->prepare("INSERT INTO $this->table (`nickname`, `message`) 
         VALUES (:nickname, :message)");
         $statement->bindValue('nickname', $comment['user_nickname'], \PDO::PARAM_STR);
