@@ -12,7 +12,7 @@ use App\Model\ArticlesManager;
 
 class HomeController extends AbstractController
 {
-    public function index()
+    public function index(): string
     {
         $articlesManager = new ArticlesManager();
         $articles = $articlesManager->selectAll();

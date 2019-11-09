@@ -9,6 +9,8 @@
 
 namespace App\Controller;
 
+use App\Model\ArticlesManager;
+use App\Model\CommentsManager;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
@@ -38,5 +40,12 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
+    }
+
+    public function getComments($id): array
+    {
+        $commentsManager = new CommentsManager();
+        $comments = $commentsManager->selectAllByArticle($id);
+        return $comments;
     }
 }

@@ -19,6 +19,14 @@
                 <p class="card-content">{{ article.paragraph4 }}</p>
                 <p class="card-content">{{ article.paragraph5 }}</p>
             </div>
+            <a href="{{ '/comments/add/' ~ article.id }}"><button class="about-contact">Add a comment</button></a>
         </div>
+        <h3 class="card-title">Comments</h3>
+            {% for comment in comments %}
+        <div class="card">
+                <div class="card-nickname">{{ comment.nickname }}</div>
+                <p class="card-comment">{{ comment.message }}</p>
+        </div>
+            {% endfor %}
     </main>
 {% endblock %}

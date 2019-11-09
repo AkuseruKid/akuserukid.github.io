@@ -5,6 +5,7 @@
         <div class="card">
             <form action="" method="POST" class="contact-form">
                 <div class="form-flex">
+                    <input type="hidden" value="{{ id }}" name="user_article_id">
                     <label for="nickname">Name</label>
                     <input type="text" name="user_nickname" id="nickname" placeholder="Enter your nickname">
                     <label for="message">Message</label>

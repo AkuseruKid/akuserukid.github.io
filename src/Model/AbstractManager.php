@@ -58,12 +58,21 @@ abstract class AbstractManager
      *
      * @return array
      */
-    public function selectOneById(int $id)
+    public function selectOneById(int $id): array
     {
         $statement = $this->pdo->prepare("SELECT * FROM $this->table WHERE id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
 
         return $statement->fetch();
+    }
+
+    public function selectAllByArticle(int $id): array
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM $this->table WHERE articles_id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchAll();
     }
 }
