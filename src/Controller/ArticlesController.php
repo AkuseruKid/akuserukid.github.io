@@ -9,10 +9,14 @@ class ArticlesController extends AbstractController
 {
     public function list(): string
     {
+        $uri = explode("/", $_SERVER["REQUEST_URI"]);
         $articlesManager = new ArticlesManager();
         $articles = $articlesManager->selectAll();
 
-        return $this->twig->render("Articles/list.html.twig", ["articles" => $articles]);
+        return $this->twig->render("Articles/list.html.twig", [
+            "articles" => $articles,
+            "uri" => $uri[1],
+        ]);
     }
 
     public function show(int $id): string

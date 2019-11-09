@@ -8,6 +8,7 @@ class ContactController extends AbstractController
 {
     public function index(): string
     {
-        return $this->twig->render("Contact/index.html.twig");
+        $uri = explode("/", $_SERVER["REQUEST_URI"]);
+        return $this->twig->render("Contact/index.html.twig", ["uri" => $uri[1]]);
     }
 }
