@@ -2,13 +2,13 @@
 
 ## Description
 
-This is my first personal project in web development
+This a simple blog, one of my personal project.
 
-Pure CSS, no Boostrap
+PHP and MVC Structure
+Pure CSS, no Bootstrap
 Some Vanilla JS for burger button
-MVC Structure
 Twig for views
-Grumphp to sniff the project
+GrumPHP to sniff the project and make clean code
 
 You can watch articles, add some comments for each articles, navigate freely into the blog :)
 
