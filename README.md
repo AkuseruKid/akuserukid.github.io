@@ -14,7 +14,7 @@ You can watch articles, add some comments for each articles, navigate freely int
 
 1. Clone the repo from Github.
 2. Run `composer install`.
-3. Create *config/db.php* from *config/db.php.dist* file and add your DB parameters. Don't delete the *.dist* file, it must be kept.
+3. Create *config/db.php* from *config/db.php.dist* file and add your DB parameters.
 ```php
 define('APP_DB_HOST', 'your_db_host');
 define('APP_DB_NAME', 'your_db_name');
